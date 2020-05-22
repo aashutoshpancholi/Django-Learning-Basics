@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+<title>{% block title %}My ADD Page{% endblock %}</title>
+{% block content %}
+    <h1>My Third Page in Django which Extend First Page..</h1><br>
+    <h2>{{var}}</h2><br>
+    <h4>{{msg}}</h4><br>
+<ul>
+    {% for subject in subjects %}
+    <li>{{subject}}</li>
+    {% endfor %}
+</ul>
+{% if ans %}
+<h4>{{num1}} is greater than {{num2}}</h4>
+{% else %}
+<h4>{{num2}} is greater than {{num1}}</h4>
+{% endif %}
+{% endblock %}

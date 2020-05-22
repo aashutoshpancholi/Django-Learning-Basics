@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block title %}My Form 1{% endblock %}
+{% block content %}
+<h1 style="text-align: center;margin-top: 1rem;">My Form</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6" style="margin: 0 auto;">
+            <form method="POST" action="{% url 'submitmyform' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="E Mail ID">E Mail ID</label>
+                    <input type="text" id="E Mail ID" name="E Mail ID" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea id="Description" name="Description" class="form-control" rows="8"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="margin: 0 auto;
+                    display: block;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
